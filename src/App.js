@@ -7,24 +7,6 @@ import Login from "./companents/Login/login";
 
 
 function App() {
-    return (
-        <div className="App">
-            <Header/>
- 
-            <Login/>
-            <Footer/>
-
-        </div>
-    );
-import {Route, Routes} from "react-router-dom";
-
-import Home from "./companents/Home";
-
-
-
-
-
-function App() {
   return (
     <div className="App">
       <Header/>
