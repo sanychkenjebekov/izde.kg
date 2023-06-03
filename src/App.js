@@ -4,11 +4,7 @@ import Header from "./companents/Header";
 import Footer from "./companents/Footer";
 import Agents from "./companents/Agents/agents";
 import Login from "./companents/Login/login";
-import Home from "./companents/Home";
 
-
-
-// ecccas
 
 function App() {
   return (
