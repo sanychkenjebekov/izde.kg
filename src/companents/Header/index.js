@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import logo from '../../img/Logo.svg'
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import user from '../../img/user.svg'
+import {GlobalContext} from "../../context";
+
 
 
 const Header = () => {
+const {users} = useContext(GlobalContext)
+const {profil} = useContext(GlobalContext)
+
     const burger = (e)=>{
         const b = document.querySelector('.header--burgerAll__burger--1')
         const b2 = document.querySelector('.header--burgerAll__burger--2')
@@ -29,26 +34,54 @@ const Header = () => {
             bg.style.display = 'none'
         }
     }
+    const removeBurger = ()=>{
+        const bMunu = document.querySelector('.burgerMenu')
+        const b = document.querySelector('.header--burgerAll__burger--1')
+        const b2 = document.querySelector('.header--burgerAll__burger--2')
+        const b3 = document.querySelector('.header--burgerAll__burger--3')
+        const bg = document.querySelector('.bg')
+        bMunu.classList.remove('active')
+        b2.style.opacity = '1'
+        b.style.transform = 'inherit'
+        b3.style.transform = 'inherit'
+        b3.style.margin = '0'
+        bMunu.style.transform = 'translate(100%)'
+        bg.style.display = 'none'
+    }
+    useEffect(()=>{
+        const hUser = document.querySelector('.headerUser')
+        const hLogin = document.querySelector('.headerLogin')
+        if(users === true){
+            hUser.style.display = 'block'
+        }else {
+            hUser.style.display = 'none'
+        }
+        if(profil === true){
+            hLogin.style.display = 'block'
+        }else {
+            hLogin.style.display = 'none'
+        }
+    },[])
     return (
         <div id='header'>
             <div className="container">
                 <div className="header">
                     <div className="header--logo">
-                        <NavLink to={'/'}>IZDE.KG</NavLink>
+                        <NavLink onClick={removeBurger} to={'/'}>IZDE.KG</NavLink>
                         <img src={logo} alt=""/>
                     </div>
                     <div className="header--menu">
-                        <NavLink to={'/buy'}>Buy</NavLink>
-                        <NavLink to={'/rent'}>Rent</NavLink>
-                        <NavLink to={'/agents'}>Agents</NavLink>
-                        <NavLink to={'/reviews'}>Reviews</NavLink>
+                        <NavLink onClick={removeBurger} to={'/buy'}>Buy</NavLink>
+                        <NavLink onClick={removeBurger} to={'/rent'}>Rent</NavLink>
+                        <NavLink onClick={removeBurger} to={'/agents'}>Agents</NavLink>
+                        <NavLink onClick={removeBurger} to={'/reviews'}>Reviews</NavLink>
                     </div>
                     <div className="header--len">
                         <select>
                             <option>English</option>
                             <option>Русский</option>
                         </select>
-                        <button className='headerLogin'>Log in</button>
+                        <Link onClick={removeBurger} to={'/login'}><button className='headerLogin'>Log in</button></Link>
                         <img className='headerUser' src={user} alt=""/>
                     </div>
                     <div onClick={burger} className="header--burgerAll">
@@ -62,19 +95,19 @@ const Header = () => {
                 </div>
             </div>
             <hr/>
-            <div className="burgerMenu">
+            <div style={{transform:'translateX(100%)'}} className="burgerMenu">
                 <div className="burgerMenu__a">
-                    <NavLink to={'/buy'}>Buy</NavLink>
-                    <NavLink to={'/rent'}>Rent</NavLink>
-                    <NavLink to={'/agents'}>Agents</NavLink>
-                    <NavLink to={'/reviews'}>Reviews</NavLink>
+                    <NavLink onClick={removeBurger} to={'/buy'}>Buy</NavLink>
+                    <NavLink onClick={removeBurger} to={'/rent'}>Rent</NavLink>
+                    <NavLink onClick={removeBurger} to={'/agents'}>Agents</NavLink>
+                    <NavLink onClick={removeBurger} to={'/reviews'}>Reviews</NavLink>
                 </div>
                 <div className="burgerMenu--leng">
                     <select className='sel'>
                         <option>English</option>
                         <option>Русский</option>
                     </select>
-                    <button className='burgerLogin'>Log in</button>
+                    <Link onClick={removeBurger} to={'/login'}><button className='burgerLogin'>Log in</button></Link>
                     <img className='burgerUser' src={user} alt=""/>
                 </div>
             </div>
