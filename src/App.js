@@ -1,21 +1,14 @@
 import './App.scss';
+import {Route, Routes} from "react-router-dom";
 import Header from "./companents/Header";
 import Footer from "./companents/Footer";
 import Agents from "./companents/Agents/agents";
 import Login from "./companents/Login/login";
-
-function App() {
-    return (
-        <div className="App">
-            <Header/>
-            {/* <Agents/> */}
-            <Login/>
-            <Footer/>
-
-        </div>
-    );
-import {Route, Routes} from "react-router-dom";
 import Home from "./companents/Home";
+
+
+
+
 
 function App() {
   return (
@@ -23,6 +16,8 @@ function App() {
       <Header/>
         <Routes>
             <Route path={'/'} element={<Home/>}/>
+            <Route path={'/login'} element={<Login/>}/>
+            <Route path={'/agents'} element={<Agents/>}/>
         </Routes>
         <Footer/>
     </div>

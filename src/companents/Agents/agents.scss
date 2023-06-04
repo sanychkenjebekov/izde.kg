@@ -63,6 +63,10 @@
               border: none;
               outline: none;
               transition: 0.2s;
+              &:hover{
+              background: #005cdf;
+            }
+
               .icon{
                 font-size: 23px;
 
@@ -122,6 +126,9 @@
         align-items: center;
         border: 1px solid rgba(0, 74, 96, 0.7);
         border-radius: 35px;
+        &:hover{
+          background: rgba(0, 74, 96, 0.1);
+        }
         img{
           border-radius: 35px 35px 0 0;
           width: 256px;
@@ -157,13 +164,19 @@
       display: flex;
       justify-content: center;
       button{
-        padding: 8px 16px;
+        font-size: 16px;
+        padding: 10px 16px;
         margin: 86px 0;
         background: rgba(27, 118, 249, 0.3);
         border-radius: 8px;
         border: none;
         outline: none;
         color: #1B76F9;
+        transition: .3s;
+        &:hover{
+          color: #FFFFFF;
+          background: #0762E5;
+        }
       }
     }
   }

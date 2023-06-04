@@ -184,6 +184,9 @@
 }
 
 @media (max-width: 420px) {
+  #home .filter--sel__btn button{
+    margin: 0 9px 0 0;
+  }
   #home .filter--inp input {
     padding: 20px 115px 20px 20px;
   }
@@ -223,7 +226,7 @@
     font-size: 28px;
   }
   #home .filter {
-    height: 235px;
+    height: 210px;
   }
   #home .filter--inp input {
     padding: 20px 85px 20px 20px;

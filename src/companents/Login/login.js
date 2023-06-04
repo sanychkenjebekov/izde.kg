@@ -1,13 +1,16 @@
 import './login.scss'
 import './media.scss'
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import logoLogin from '../../img/LogoLogin.svg'
 import {Link} from 'react-router-dom';
 import {FcGoogle} from "react-icons/fc";
 import {FaRegEye, FaRegEyeSlash} from "react-icons/fa";
+import {GlobalContext} from "../../context";
 
 
 const Login = () => {
+    const {setProfil} = useContext(GlobalContext)
+    const {setUsers} = useContext(GlobalContext)
     const [email, setEmail] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [password, setPassword] = useState("");

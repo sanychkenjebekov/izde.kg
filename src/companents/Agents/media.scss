@@ -76,6 +76,7 @@
       .agents{
         h1{
           font-size: 30.52px;
+          width: 480px;
         }
         &__block{
           width: 410px;
@@ -120,10 +121,10 @@
               display: block;
             }
             button{
-              padding: 13px 16px;
-              width: 90px;
+              width: 97px;
               text-align: right;
-
+              right: 15px;
+              padding: 10px 16px;
             }
           }
         }
@@ -167,7 +168,7 @@
           .section{
             display: flex;
             gap: 15px;
-            padding: 10px 40px;
+            padding: 10px 2px;
 
             .sec{
               width: 152px;
@@ -205,12 +206,12 @@
             padding: 10px 4px;
 
             .sec{
-              width: 142px;
+              width: 127px;
             }
           }
           .section2{
             display: flex;
-            width: 300px;
+            width: 270px;
           }
           &--search{
             input{
@@ -226,8 +227,7 @@
       }
     }
   }
-}
-@media (max-width: 320px) {
+
   #agent{
     #agents{
       .agents{
@@ -241,27 +241,28 @@
             display: flex;
             gap: 15px;
             padding: 10px 4px;
-
-            .sec{
-              width: 132px;
-            }
-          }
-          .section2{
-            display: flex;
-            width: 290px;
           }
           &--search{
             input{
               display: none;
-              width: 260px;
+              width: 245px;
               height: 58px;
             }
             input::placeholder{
-              font-size: 14px;
+              font-size: 13px;
             }
           }
         }
       }
     }
   }
+  #agent #agents .agents__block--search button {
+    right: 7px;
+  }
+  #agent #agents .agents h1 {
+    width: 300px;
+  }
+}
+@media (max-width: 320px) {
+
 }
